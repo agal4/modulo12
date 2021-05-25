@@ -1,4 +1,4 @@
-import {Validators, createFormValidation} from "@lemoncode/fonk"
+import {Validators, createFormValidation} from "@lemoncode/fonk";
 
 const validationSchema = {
     field: {

@@ -23,6 +23,15 @@
       "name": "Ahorro",
       "balance": 8500,
       "lastTransaction": "2019-11-15T08:29:04"
+    },
+    {
+      "iban": "SI86 7051 5103 0020 832",
+      "name": "Actualizada Cuenta Nomina v2",
+      "type": "1",
+      "balance": 0,
+      "lastTransaction": "2021-05-24T22:05:14.249Z",
+      "id": "TwoPP6X",
+      "alias": "Actualizada Cuenta Nomina v2"
     }
   ],
   "movements": [
