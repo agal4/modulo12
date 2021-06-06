@@ -1,4 +1,6 @@
-import {Validators, createFormValidation} from "@lemoncode/fonk";
+import { Validators, createFormValidation } from '@lemoncode/fonk';
+import { iban } from '@lemoncode/fonk-iban-validator';
+import { laterDate } from '@lemoncode/fonk-later-date-validator';
 /*  //Iban origen
  id: "",
  //Iban destino
@@ -16,17 +18,46 @@ import {Validators, createFormValidation} from "@lemoncode/fonk";
  //Email beneficiario
  email: "", */
 const validationSchema = {
-    field: {
-        id: [Validators.required],
-        iban: [Validators.required],
-        name: [Validators.required],
-        amount: [Validators.required],
-        concept: [],
-        notes: [],
-        transactionDate: [],
-        /* transactionDate: [laterDate.validator], */
-        email: [Validators.email],
-    },
+  field: {
+    id: [],
+    iban: [
+      {
+        validator: Validators.required,
+        message: 'Campo requerido',
+      },
+      {
+        validator: iban.validator,
+        message: 'IBAN no válido',
+      },
+    ],
+    name: [
+      {
+        validator: Validators.required,
+        message: 'Campo requerido',
+      },
+    ],
+    amount: [
+      {
+        validator: Validators.required,
+        message: 'Campo requerido',
+      },
+    ],
+    concept: [],
+    notes: [],
+    date: [
+      {
+        validator: laterDate.validator,
+        message: 'Introduzca una fecha válida',
+        customArgs: { date: new Date() },
+      },
+    ],
+    email: [
+      {
+        validator: Validators.email,
+        message: 'Email no válido',
+      },
+    ],
+  },
 };
 
 export const formValidation = createFormValidation(validationSchema);
