@@ -6,7 +6,8 @@
       "type": "1",
       "name": "Gastos mes",
       "balance": 1490,
-      "lastTransaction": "2019-12-09T21:30:00"
+      "lastTransaction": "2019-12-09T21:30:00",
+      "alias": "Gastos mes"
     },
     {
       "id": "2",
