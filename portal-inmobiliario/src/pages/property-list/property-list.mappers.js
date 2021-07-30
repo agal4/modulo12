@@ -15,7 +15,7 @@ const mapPropertyFromApiToViewModel = (property) => {
     };
 };
 
-const getRoomWord = (rooms) => {
+export const getRoomWord = (rooms) => {
     return rooms > 1 ? 'habitaciones' : 'habitación';
 };
 
