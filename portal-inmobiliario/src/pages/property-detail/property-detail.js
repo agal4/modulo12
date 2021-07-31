@@ -63,7 +63,7 @@ onSubmitForm('contact-button', () => {
 
 const onSave = () => {
     return insertContact(contact);
-  };
+};
 
 const params = history.getParams();
 Promise.all([getPropertyDetail(params.id), getEquipmentList()]).then(

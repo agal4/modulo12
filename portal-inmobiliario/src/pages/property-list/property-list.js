@@ -4,17 +4,6 @@ import {addPropertyRows, setOptions, clearPropertyRows} from './property-list.he
 import {roomOptions, bathroomOptions, minPriceOptions, maxPriceOptions} from './property-list.constants';
 import {onUpdateField, onSubmitForm} from '../../common/helpers'
 
-/* Promise.all([
-    getPropertyList(),
-    getProvinceList(),
-    getSaleTypeList(),
-]).then(resultList => {
-    const [propertyList, saleTypeList, provinceList] = resultList;
-    loadPropertyList(propertyList);
-    setOptions(saleTypeList, 'select-sale-type', '¿Qué venta?');
-    ...
-}); */
-
 Promise.all([getPropertyList(), getSaleTypeList(), getProvinceList()]).then(
     ([propertyList, saleTypeList, provinceList]) => {
         loadPropertyList(propertyList);
