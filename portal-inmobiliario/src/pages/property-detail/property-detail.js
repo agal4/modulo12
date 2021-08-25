@@ -48,22 +48,23 @@ onUpdateField('message', (event) => {
     });
 });
 
+
+const onSave = () => {
+    return insertContact(contact);
+};
+
 onSubmitForm('contact-button', () => {
     formValidation.validateForm(contact).then((result) => {
         onSetFormErrors(result);
         if(result.succeeded){
             onSave().then(savedContact => {
                 console.log('contact saved');
-                console.log(savedContact);
+                console.log({savedContact});
                 history.push(routes.propertyList);
             });
         }
     });
 });
-
-const onSave = () => {
-    return insertContact(contact);
-};
 
 const params = history.getParams();
 Promise.all([getPropertyDetail(params.id), getEquipmentList()]).then(
